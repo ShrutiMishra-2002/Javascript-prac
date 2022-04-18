@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function validate()
+        {
+            var name= document.write.myform.name.value;
+            var password= document.write.myform.password.value;
+            var age= document.write.myform.age.value;
+            var email= document.write.myform.email.value.indexOf('@');
+            if (name == null || name=="") 
+            {
+                alert("name blank");
+                return false;
+            } 
+            if(password.length<6) 
+            {
+                alert("password should contain atleast 6 character");
+                return false;
+                
+            }
+            if(isNaN(age)||age<1||age>100)
+            {
+                alert("age not valid");
+                return false;
+            }    
+            if(email ==-1)
+            {
+                alert("email not valid");
+                return false;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myform" action="welcome.html" method="post"  onsubmit="return validate()">
+    
+        Name:<input type="text" name="name"><br>
+        password:<input type="password" name="password"><br>
+        Email:<input type="email" name="email"><br>
+        Age:<input type="text" name="age"><br>
+        <input type="submit" class="submit" value="submit"><br>
+        </form>
+</body>
+</html>

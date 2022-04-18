@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form validate</title>
+    <script>
+      function validate() {
+        var name = document.write.myform.name.value;
+        var password = document.write.myform.password.value;
+        var age = document.write.myform.age.value;
+        var email = document.write.myform.email.value.indexOf("@");
+        if (name.trim() == null || name == "") {
+          alert("name blank");
+          return false;
+        }
+        if (password.length < 6) {
+          alert("password should contain atleast 6 character");
+          return false;
+        }
+        if (isNaN(age) || age < 1 || age > 100) {
+          alert("age not valid");
+          return false;
+        }
+        if (email == -1) {
+          alert("email not valid");
+          return false;
+        }
+      }
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-color: darkblue;
+        /* background-color: aquamarine; */
+        /* color: black; */
+        color: #fff;
+        /* color: b; */
+        text-transform: uppercase;
+        overflow-y: hidden;
+      }
+      h1 {
+        padding: 38px;
+      }
+h3{
+    margin: 0.04px;
+}
+      form input {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        /* flex-wrap: wrap; */
+        gap: 1rem;
+        /* flex:1 1 40rem; */
+        /* padding:0.9rem 0.9rem; */
+        padding: 0.8rem;
+        /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); */
+        border-radius: 0.5rem;
+        background: #fff;
+        width: 20%;
+        /* justify-content: space-between; */
+        /* border-radius: .5rem; */
+        font-size: 1.5rem;
+        color: #333;
+        /* padding:1rem; */
+        margin: 0.8rem 0;
+        border: 0.1rem solid rgba(0, 0, 0, 0.1);
+        text-transform: capitalize;
+      }
+      input:focus {
+        outline: #fff;
+      }
+      .submit {
+        width: 10%;
+        margin-top: 20px;
+        background-color: goldenrod;
+        box-shadow: 5px 7px #333;
+
+        /* use to center text in button */
+        display: grid;
+        /* end */
+        color: #fff;
+        text-transform: uppercase;
+      }
+      input radio {
+        text-transform: uppercase;
+        /* display: flex;s */
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>REGISTRATION FORM</h1>
+
+      <form
+        name="myform"
+        method="post"
+        action="welcome.html"
+        onsubmit="return validate()"
+      >
+        <h3>Name:</h3>
+        <input type="text" name="name" /><br />
+        <h3>password:</h3>
+        <input type="password" name="password" /><br />
+        <h3>Email:</h3>
+        <input type="email" name="email" /><br />
+        <h3>Age:</h3>
+        <input type="number" name="age" /><br />
+
+        <!-- <h3>Gender:</h3>
+        <label>
+          <input type="radio" name="gender" />
+          <span>Male</span>
+        </label>
+        <label>
+          <input type="radio" name="gender" />
+          <span>Female</span>
+          <br />
+        </label> -->
+        <b><input type="submit" class="submit" value="submit" /></b><br />
+      </form>
+    </center>
+  </body>
+</html>
